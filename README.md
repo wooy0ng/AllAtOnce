@@ -90,7 +90,7 @@
 
 ## ✓ 서비스 아키텍처
 
-<img width="800" alt="main" src="https://github.com/wooy0ng/wooy0ng/assets/37149278/b8ce2b81-f656-424e-b830-8c9ac9e1d412">
+<img width="800" alt="main" src="https://github.com/wooy0ng/wooy0ng/assets/37149278/d342c518-cf35-4a45-b006-bcb803504041">
 
 
 <br><br><br>
@@ -110,34 +110,12 @@
 |강혜빈|권현정|백인진|이용우|이준원|
 |:--:|:--:|:--:|:--:|:--:|
 |<img width="100" alt="에브리타임" src="https://user-images.githubusercontent.com/37149278/216918705-56e2f4d6-bc4f-482a-b9fd-190ca865d0e5.png">|<img width="100" alt="에브리타임" src="https://user-images.githubusercontent.com/37149278/216918785-3bc90fc4-e4b8-43f4-bd61-d797cf87e344.png">|<img width="100" alt="에브리타임" src="https://user-images.githubusercontent.com/37149278/216919234-e9cc433c-f464-4a4b-8601-cffa668b22b2.png">|<img width="100" alt="에브리타임" src="https://user-images.githubusercontent.com/37149278/216919814-f6ff7c2f-90ea-489c-b19a-a29fca8f9861.png">|<img width="100" alt="에브리타임" src="https://user-images.githubusercontent.com/37149278/216919925-1ab02487-e7a5-4995-8d22-1253bbcae550.png">|
-|Question Generation|Answer Extraction|Summarization, BE|STT,FE|STT, STT PostProcessing|
+|Question Generation|Answer Extraction|Summarization,<br> BE|STT, <br>FE|STT, <br>STT PostProcessing|
 
 
 
 <br><br><br>
 
+자세한 정보 및 인사이트는 <a href="https://blog.naver.com/wooy0ng/223018461440">블로그</a>를 참고해주세요! 
 
-## Reference
-**STT**
-
-- **Character error rates(CER) : [https://github.com/hyeonsangjeon/computing-Korean-STT-error-rates](https://github.com/hyeonsangjeon/computing-Korean-STT-error-rates)**
-- **ESPNet : [https://github.com/espnet/espnet](https://github.com/espnet/espnet)**
-- **Whisper : [https://arxiv.org/pdf/2212.04356.pdf](https://arxiv.org/pdf/2212.04356.pdf)**
-
-**Summarization**
-
-- **KoBART : https://github.com/seujung/KoBART-summarization / [https://huggingface.co/docs/transformers/model_doc/bart](https://huggingface.co/docs/transformers/model_doc/bart)**
-- **T5 : https://github.com/google-research/multilingual-t5 / [https://github.com/google-research/text-to-text-transfer-transformer](https://github.com/google-research/text-to-text-transfer-transformer)**
-- **반복 문자열 제거 : [https://velog.io/@likelasttime/%ED%8C%8C%EC%9D%B4%EC%8D%AC-4873.-%EB%B0%98%EB%B3%B5%EB%AC%B8%EC%9E%90-%EC%A7%80%EC%9A%B0%EA%B8%B0](https://velog.io/@likelasttime/%ED%8C%8C%EC%9D%B4%EC%8D%AC-4873.-%EB%B0%98%EB%B3%B5%EB%AC%B8%EC%9E%90-%EC%A7%80%EC%9A%B0%EA%B8%B0)**
-
-**Answer Extraction**
-
-- **KeyBERT : [https://github.com/MaartenGr/KeyBERT](https://github.com/MaartenGr/KeyBERT)**
-- **NER : [https://github.com/eagle705/pytorch-bert-crf-ner](https://github.com/eagle705/pytorch-bert-crf-ner)**
-
-**Question Generation**
-
-- **KoBART : [https://github.com/Seoneun/KoBART-Question-Generation](https://github.com/Seoneun/KoBART-Question-Generation)**
-- **T5 : [https://github.com/patil-suraj/question_generation#project-details](https://github.com/patil-suraj/question_generation#project-details) / [https://huggingface.co/paust/pko-t5-base](https://huggingface.co/paust/pko-t5-base)**
-
-**FastAPI : [https://fastapi.tiangolo.com/ko/](https://fastapi.tiangolo.com/ko/)**
+<a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fwooy0ng%2Fhit-counter&count_bg=%23ADC83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
