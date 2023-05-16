@@ -1,208 +1,117 @@
-# AllAtOnce : For Lecture
-## Members
+<div align="center">
+ <h1> AllAtOnce: 강의록 질문 생성 </h1>
+
+ <table>
+    <tr>
+      <td align="center">메인</td>
+      <td align="center">STT</td>
+    </tr>
+    <tr>
+      <td align="center">
+        <img width="500px" alt="메인" src="https://github.com/wooy0ng/wooy0ng/assets/37149278/50ee7960-e05e-43ef-b8e7-5ee78b77e680">
+      </td>
+      <td align="center">
+        <img width="500px" alt="STT" src="https://github.com/wooy0ng/wooy0ng/assets/37149278/d0d46fa9-8202-4ecf-ba5a-517acc5f3a40">
+      </td>
+    </tr>
+    <tr>
+      <td align="center">요약</td>
+      <td align="center">질문 생성</td>
+    </tr>
+    <tr>
+      <td align="center">
+        <img width="500px" alt="요약" src="https://github.com/wooy0ng/wooy0ng/assets/37149278/f833430b-cdd8-457f-a31e-957edd21b362">
+      </td>
+      <td align="center">
+        <img width="500px" alt="질문 생성" src="https://github.com/wooy0ng/wooy0ng/assets/37149278/a58a7841-7563-4df9-aa0e-d744e2dc7114">
+      </td>
+    </tr>
+    
+ </table>
+
+ <br>
+ 대면 수업 확대로 기존 녹화 강의에서 실시간 대면 강의로 변화함에 따라 학습에 어려움을 겪는 학생들이 많아졌습니다.  <br />
+ 이런 불편함을 해소하고자 강의 녹음본을 활용하여 요약본과 예상 질문 및 답안을 생성하여 <br>
+ 학생들의 효율적인 학습을 돕는 어플리케이션을 제작해보는 프로젝트입니다.<br />
+ <br>
+ 강의 수강 시, 주요 내용을 놓쳐 강의 녹음본을 통해 복습하고자 하는 학생 <br>
+ 대면 강의 시, 필기 중 주요 내용에 대한 체계적인 정리가 어려운 학생 <br>
+ 시험 전, 예상 질문과 답안을 통해 공부를 하고자 하는 학생을 대상으로 프로젝트를 진행하였습니다. 
+<br>
+</div>
+
+<br><br><br>
+
+## ✓ 활용 장비 및 환경
+- GPU : NVIDIA A100  
+- OS : Ubuntu 18.04 LTS
+
+<br><br>
+
+## ✓ 선정 모델 구조
+
+<b>(1) STT & Post Processing</b>
+
+- 가장 빠르고 CER 평가 지표가 높았던 Whisper 모델을 사용했습니다.
+<img src="https://github.com/wooy0ng/wooy0ng/assets/37149278/47000a4c-13cc-4549-b572-bed73c5bf008" width="700px">
+<img src="https://github.com/wooy0ng/wooy0ng/assets/37149278/cb0df435-f19a-433e-a96c-88183905984b" width="700px">
+
+<br>
+
+- 불완전한 문장은 KoGPT2 모델로 PostProcessing 합니다.
+<img src="https://github.com/wooy0ng/wooy0ng/assets/37149278/f7719b61-9e45-4926-ac5a-1b8415c6b266" width="700px">
+
+<br><br>
+
+<b>(2) Summarization</b>
+
+- KoBART를 사용하여 STT과정을 통해 얻은 구문을 요약합니다.
+<img src="https://github.com/wooy0ng/wooy0ng/assets/37149278/2cba4739-8586-4d66-95f8-33dae5b6735e" width="700px">
+
+<br><br>
+
+<b>(3) Answer Extraction & Question Generation</b>
+
+<b>Answer Extraction</b>
+- KeyBERT와 NER를 활용하여 핵심 키워드를 추출합니다.
+- 요약본과 핵심 키워드 간의 코사인 유사도를 이용하여 Ranking을 수행합니다.
+
+<b>Question Generation</b>
+- 요약본(context)와 핵심 키워드를 사용해 질문(Question)을 생성합니다.
+
+<table>
+    <tr>
+        <td><img src="https://github.com/wooy0ng/wooy0ng/assets/37149278/302bb1b9-7922-40d0-adfa-0aafa3ffb1ef" width="700px"></td>
+        <td><img src="https://github.com/wooy0ng/wooy0ng/assets/37149278/2da2a112-13ee-4c75-81d5-b0a720186fe7" width="700px"></td>
+    </tr>
+</table>
+
+<br><br><br><br>
+
+## ✓ 서비스 아키텍처
+
+<img width="800" alt="main" src="https://github.com/wooy0ng/wooy0ng/assets/37149278/b8ce2b81-f656-424e-b830-8c9ac9e1d412">
+
+
+<br><br><br>
+
+## ✓ 사용 기술 스택
+
+<img width="600" alt="main" src="https://github.com/wooy0ng/wooy0ng/assets/37149278/c72694bb-16e5-48ec-afe6-483f69c913a5">
+
+
+
+
+
+<br><br><br>
+
+
+## ✓ 팀원 소개
 |강혜빈|권현정|백인진|이용우|이준원|
 |:--:|:--:|:--:|:--:|:--:|
 |<img width="100" alt="에브리타임" src="https://user-images.githubusercontent.com/37149278/216918705-56e2f4d6-bc4f-482a-b9fd-190ca865d0e5.png">|<img width="100" alt="에브리타임" src="https://user-images.githubusercontent.com/37149278/216918785-3bc90fc4-e4b8-43f4-bd61-d797cf87e344.png">|<img width="100" alt="에브리타임" src="https://user-images.githubusercontent.com/37149278/216919234-e9cc433c-f464-4a4b-8601-cffa668b22b2.png">|<img width="100" alt="에브리타임" src="https://user-images.githubusercontent.com/37149278/216919814-f6ff7c2f-90ea-489c-b19a-a29fca8f9861.png">|<img width="100" alt="에브리타임" src="https://user-images.githubusercontent.com/37149278/216919925-1ab02487-e7a5-4995-8d22-1253bbcae550.png">|
-|Question <br> Generation|Answer <br> Extraction|Summarization, <br> FastAPI|STT, <br> React|STT, <br> STT PostProcessing|
-|[@hyeb](https://github.com/hyeb)|[@malinmalin2](https://github.com/malinmalin2)|[@eenzeenee](https://github.com/eenzeenee)|[@wooy0ng](https://github.com/wooy0ng)|[@jun9603](https://github.com/jun9603)
+|Question Generation|Answer Extraction|Summarization, BE|STT,FE|STT, STT PostProcessing|
 
-
-<br><br><br>
-
-## Introduction
-### 프로젝트 배경
-- 대면 수업 확대로 기존 녹화 강의에서 실시간 대면 강의로 변화함에 따라 학습에 어려움을 겪는 학생들이 많아짐.
-
-![교육부](https://user-images.githubusercontent.com/37149278/216916559-523f6fe2-18ae-4dec-8281-0fb0d0ee9c3f.png)
-
-<img width="500" alt="에브리타임" src="https://user-images.githubusercontent.com/37149278/216916495-addec7cf-3301-4ff0-8839-b6831b0cc426.png">
-
-
-
-<br><br><br>
-
-### 프로젝트 목표
-- 강의 녹음본을 활용하여 요약본과 예상 질문 및 답안을 생성하여 효율적인 학습을 돕는다.
-
-<br><br>
-
-### 프로젝트 목표 대상
-- 강의 수강 시, 주요 내용을 놓쳐 강의 녹음본을 통해 복습하고자 하는 학생
-- 대면 강의 시, 필기 중 주요 내용에 대한 체계적인 정리가 어려운 학생
-- 시험 전, 예상질문과 답안을 통해 공부를 하고자 하는 학생
-
-<br><br>
-
-## Service Flow
-
-![pipeline](https://user-images.githubusercontent.com/37149278/216917400-b88ac143-0925-4921-9d86-d44181bcd4c5.png)
-
-<br><br><br>
-
-## Installization
-
-- [model link (on google drive)](https://drive.google.com/drive/folders/1peLB2-ngf8pYgyrgf545q1Ml-ReBHLiL?usp=sharing)
-- model_path = f'/opt/ml/project_models/{model_name}'
-
-<br><br>
-
-### backend settings
-
-```bash
-apt install ffmpeg
-apt-get install libsndfile1-dev
-apt install default-jdk
-
-apt-get install openjdk-8-jdk python3-dev 
-bash <(curl -s https://raw.githubusercontent.com/konlpy/konlpy/master/scripts/mecab.sh)
-```
-
-<br><br>
-
-### frontend settings
-
-아래와 같이 명령어 설치 후, terminal을 재시작합니다.
-```bash
-apt install nodejs
-apt install npm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
-```
-
-nvm을 사용하여 node.js 버전 업데이트를 합니다.
-```bash
-nvm install 17
-```
-
-react-native를 설치합니다.
-```bash
-npm install -g create-react-app
-```
-
-package.json파일이 위치하는 곳에서 아래의 명령어를 입력하여 실행에 필요한 모듈을 설치합니다.
-```bash
-$ npm install
-```
-
-<br><br>
-
-### usage
-웹 서버를 실행시킵니다. (not build)
-```bash
-$ npm start
-```
-
-<br><br><br>
-
-## Demo
-
-![데모 시연 (2)](https://user-images.githubusercontent.com/37149278/217130400-f3f790ab-0d2d-45e3-a7a5-e66b2ab254a6.gif)
-
-
-<br><br><br>
-
-
-## Structure
-
-```bash
-|-- Makefile
-|-- README.md
-|-- app
-|   |-- STT
-|   |   |-- __init__.py
-|   |   |-- data
-|   |   |   |-- __init__.py
-|   |   |   |-- audio.py
-|   |   |   |-- conf.yaml
-|   |   |   |-- make_dataset.py
-|   |   |   `-- utils
-|   |   |       |-- __init__.py
-|   |   |       |-- custom_split.py
-|   |   |       |-- delete_loop.py
-|   |   |       `-- output_to_dataframe.py
-|   |   |-- inference
-|   |   |   |-- __init__.py
-|   |   |   `-- inference.py
-|   |   `-- setup.py
-|   |-- __init__.py
-|   |-- __main__.py
-|   |-- client.py
-|   |-- keyword_extraction
-|   |   |-- __init__.py
-|   |   |-- data_utils
-|   |   |   |-- __init__.py
-|   |   |   |-- ner_dataset.py
-|   |   |   |-- pad_sequence.py
-|   |   |   |-- utils.py
-|   |   |   `-- vocab_tokenizer.py
-|   |   |-- filtering.py
-|   |   |-- keybert_model.py
-|   |   |-- main.py
-|   |   |-- ner_config
-|   |   |   |-- config.json
-|   |   |   |-- ner_to_index.json
-|   |   |   |-- net.py
-|   |   |   |-- pytorch_kobert.py
-|   |   |   `-- utils.py
-|   |   |-- stopwords.txt
-|   |   `-- vocab.pkl
-|   |-- question_generation
-|   |   |-- __init__.py
-|   |   |-- kobart_qg.py
-|   |   |-- main.py
-|   |   |-- qg_filtering.py
-|   |   `-- t5_pipeline.py
-|   |-- server.py
-|   |-- stt_postprocessing
-|   |   |-- __init__.py
-|   |   |-- dataloader.py
-|   |   |-- inference.py
-|   |   |-- main.py
-|   |   `-- split_data.py
-|   |-- summary
-|   |   |-- __init__.py
-|   |   |-- dataloader.py
-|   |   |-- main.py
-|   |   |-- postprocess.py
-|   |   |-- preprocess.py
-|   |   `-- summary.py
-|   `-- utils
-|       |-- keyword_model_init.py
-|       |-- qg_model_init.py
-|       |-- stt_model_init.py
-|       `-- summary_model_init.py
-|-- debug.py
-|-- frontend
-|   |-- README.md
-|   |-- package-lock.json
-|   |-- package.json
-|   |-- public
-|   |   |-- favicon.ico
-|   |   |-- index.html
-|   |   |-- logo192.png
-|   |   |-- logo512.png
-|   |   |-- manifest.json
-|   |   `-- robots.txt
-|   `-- src
-|       |-- App.css
-|       |-- App.js
-|       |-- App.test.js
-|       |-- images
-|       |   `-- background.png
-|       |-- index.css
-|       |-- index.js
-|       |-- logo.svg
-|       |-- questionGenerationPage.js
-|       |-- reportWebVitals.js
-|       |-- setupTests.js
-|       |-- sttPage.js
-|       `-- summarizationPage.js
-|-- poetry.lock
-`-- pyproject.toml
-```
-
-<br><br><br>
-
-## Wrap-up Review
 
 
 <br><br><br>
