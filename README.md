@@ -56,7 +56,7 @@
 <img src="https://github.com/wooy0ng/wooy0ng/assets/37149278/47000a4c-13cc-4549-b572-bed73c5bf008" width="700px">
 <img src="https://github.com/wooy0ng/wooy0ng/assets/37149278/cb0df435-f19a-433e-a96c-88183905984b" width="700px">
 
-<br>
+<br><br>
 
 - 불완전한 문장은 KoGPT2 모델로 PostProcessing 합니다.
 <img src="https://github.com/wooy0ng/wooy0ng/assets/37149278/f7719b61-9e45-4926-ac5a-1b8415c6b266" width="700px">
@@ -75,16 +75,13 @@
 <b>Answer Extraction</b>
 - KeyBERT와 NER를 활용하여 핵심 키워드를 추출합니다.
 - 요약본과 핵심 키워드 간의 코사인 유사도를 이용하여 Ranking을 수행합니다.
+<img src="https://github.com/wooy0ng/wooy0ng/assets/37149278/302bb1b9-7922-40d0-adfa-0aafa3ffb1ef" width="700px">
+
+<br><br>
 
 <b>Question Generation</b>
 - 요약본(context)와 핵심 키워드를 사용해 질문(Question)을 생성합니다.
-
-<table>
-    <tr>
-        <td><img src="https://github.com/wooy0ng/wooy0ng/assets/37149278/302bb1b9-7922-40d0-adfa-0aafa3ffb1ef" width="700px"></td>
-        <td><img src="https://github.com/wooy0ng/wooy0ng/assets/37149278/2da2a112-13ee-4c75-81d5-b0a720186fe7" width="700px"></td>
-    </tr>
-</table>
+<img src="https://github.com/wooy0ng/wooy0ng/assets/37149278/2da2a112-13ee-4c75-81d5-b0a720186fe7" width="700px">
 
 <br><br><br><br>
 
