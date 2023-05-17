@@ -87,7 +87,7 @@
 
 ## ✓ 서비스 아키텍처
 
-<img width="800" alt="main" src="https://github.com/wooy0ng/wooy0ng/assets/37149278/d342c518-cf35-4a45-b006-bcb803504041">
+<img width="800" src="https://github.com/wooy0ng/wooy0ng/assets/37149278/e7d896f0-4335-4ad7-ae59-52d1fed72549">
 
 
 <br><br><br>
